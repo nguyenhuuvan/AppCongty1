@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="registerStep2"
+            type="com.lv.appcongty1.model.Register_Step2" />
+
+        <variable
+            name="handlers"
+            type="com.lv.appcongty1.ui.Register_Step2_Activity.MyClickHandlers" />
+    </data>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        tools:context=".ui.Register_Step2_Activity">
+
+
+    </RelativeLayout>
+</layout>
+
