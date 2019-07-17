@@ -29,7 +29,7 @@ public class WecomeActivity extends AppCompatActivity {
     }
     public class MyClickHandlers {
 
-        public void onCreat() {
+        public void onCreat(View view) {
             startActivity(new Intent(WecomeActivity.this, Register_Step1_Activity.class));
         }
     }

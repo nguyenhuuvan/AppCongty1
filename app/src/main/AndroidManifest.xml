@@ -9,7 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.Register_Step2_Activity"></activity>
+        <activity
+            android:name=".ui.HomeActivity"
+            android:label="@string/title_activity_home"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".ui.Register_Step4_Activity" />
+        <activity android:name=".ui.Register_Step3_Activity" />
+        <activity android:name=".ui.Register_Step2_Activity" />
         <activity android:name=".ui.Register_Step1_Activity" />
         <activity android:name=".ui.WecomeActivity">
             <intent-filter>

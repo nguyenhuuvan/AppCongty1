@@ -27,10 +27,10 @@ public class Register_Step1_Activity extends AppCompatActivity {
     }
     public class MyClickHandlers {
 
-        public void back() {
+        public void back(View view) {
             finish();
         }
-        public void continue_() {
+        public void continue_(View view) {
             startActivity(new Intent(Register_Step1_Activity.this, Register_Step2_Activity.class));
         }
     }

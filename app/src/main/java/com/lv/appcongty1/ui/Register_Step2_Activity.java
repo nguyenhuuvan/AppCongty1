@@ -3,6 +3,7 @@ package com.lv.appcongty1.ui;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -27,8 +28,11 @@ public class Register_Step2_Activity extends AppCompatActivity {
     }
 
     public class MyClickHandlers {
-        public void back() {
+        public void back(View view) {
             finish();
+        }
+        public void continue_(View view) {
+            startActivity(new Intent(Register_Step2_Activity.this, Register_Step3_Activity.class));
         }
     }
 }
