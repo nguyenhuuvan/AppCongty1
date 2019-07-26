@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="charity"
+            type="com.lv.appcongty1.adapter.CharityAdapter.ViewHolder" />
+    </data>
+
+    <LinearLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:orientation="vertical">
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            app:cardCornerRadius="8dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="220dp"
+                    android:background="@drawable/charity_image_background"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/tre_em" />
+
+
+                <TextView
+                    android:text="@{charity.deadLine}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginRight="12dp"
+                    android:background="@drawable/charity_textview_background"
+                    android:paddingStart="20dp"
+                    android:paddingTop="6dp"
+                    android:paddingEnd="20dp"
+                    android:paddingBottom="6dp"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="12dp" />
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+        <TextView
+            android:text="@{charity.name}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:text="@{charity.description}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/colorTextGray"
+            android:textSize="14sp" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/button_gray">
+
+            <TextView
+                android:text="@{charity.rpSupported}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_yellow"
+                android:paddingLeft="16dp"
+                android:paddingTop="12dp"
+                android:paddingRight="50dp"
+
+                android:paddingBottom="12dp"
+
+                android:textColor="@color/black" />
+
+            <TextView
+                android:text="@{charity.rpTotal}"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:paddingRight="16dp"
+                android:textColor="@color/black" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="Donate Now ->"
+            android:textColor="@color/orange"
+            android:textStyle="bold" />
+    </LinearLayout>
+</layout>

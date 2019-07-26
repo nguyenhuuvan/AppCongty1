@@ -1,16 +1,11 @@
 package com.lv.appcongty1.ui;
 
-import android.app.ActionBar;
+import android.graphics.Color;
 import android.graphics.drawable.Drawable;
-import android.os.Build;
 import android.os.Bundle;
-
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 
 import android.view.View;
 
-import androidx.annotation.RequiresApi;
 import androidx.core.content.res.ResourcesCompat;
 import androidx.core.view.GravityCompat;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -19,26 +14,41 @@ import android.view.MenuItem;
 
 import com.google.android.material.navigation.NavigationView;
 import com.lv.appcongty1.R;
+import com.lv.appcongty1.adapter.HomePagerAdapter;
 
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.viewpager.widget.ViewPager;
 
 import android.view.Menu;
 import android.widget.Toast;
 
+import me.majiajie.pagerbottomtabstrip.NavigationController;
+import me.majiajie.pagerbottomtabstrip.PageNavigationView;
+import me.majiajie.pagerbottomtabstrip.item.BaseTabItem;
+import me.majiajie.pagerbottomtabstrip.item.NormalItemView;
+import spencerstudios.com.bungeelib.Bungee;
+
 public class HomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    private Toolbar toolbar;
+    private ViewPager viewPager;
+    private PageNavigationView tab;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        Toolbar toolbar = findViewById(R.id.toolbar);
+        Bungee.zoom(this);
+        toolbar = findViewById(R.id.toolbar);
+        tab = findViewById(R.id.tab);
+        viewPager = findViewById(R.id.viewPager);
         toolbar.setNavigationIcon(R.drawable.menu);
         setSupportActionBar(toolbar);
+
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         final DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
@@ -61,6 +71,28 @@ public class HomeActivity extends AppCompatActivity
         });
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
+
+
+        tab = findViewById(R.id.tab);
+        NavigationController navigationController = tab.custom()
+                .addItem(newItem(R.drawable.ic_restore_gray_24dp, R.drawable.ic_restore_teal_24dp, getString(R.string.home_myWallet)))
+                .addItem(newItem(R.drawable.ic_favorite_gray_24dp, R.drawable.ic_favorite_teal_24dp, getString(R.string.home_insight)))
+                .addItem(newItem(R.drawable.ic_nearby_gray_24dp, R.drawable.ic_nearby_teal_24dp, getString(R.string.home_tool)))
+                .build();
+
+
+        navigationController.setupWithViewPager(viewPager);
+        viewPager.setAdapter(new HomePagerAdapter(getSupportFragmentManager()));
+
+    }
+
+
+    private BaseTabItem newItem(int drawable, int checkedDrawable, String text) {
+        NormalItemView normalItemView = new NormalItemView(this);
+        normalItemView.initialize(drawable, checkedDrawable, text);
+        normalItemView.setTextDefaultColor(Color.GRAY);
+        normalItemView.setTextCheckedColor(0xFF009688);
+        return normalItemView;
     }
 
     @Override
@@ -89,7 +121,7 @@ public class HomeActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_notification) {
-            Toast.makeText(this, "Thông báo", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.notification_), Toast.LENGTH_SHORT).show();
             return true;
         }
 

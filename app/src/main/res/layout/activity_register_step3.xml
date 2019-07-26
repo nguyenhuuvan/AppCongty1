@@ -1,128 +1,134 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
         <variable
             name="registerStep3"
-            type="com.lv.appcongty1.model.Register_Step3" />
+            type="com.lv.appcongty1.model.RegisterStep3" />
 
         <variable
-            name="handlers"
-            type="com.lv.appcongty1.ui.Register_Step3_Activity.MyClickHandlers" />
+            name="onClickListener"
+            type="com.lv.appcongty1.ui.RegisterStep3Activity.OnClickListener" />
     </data>
 
-    <ScrollView
-        android:id="@+id/scrollView"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/background_creat_act"
-        android:fillViewport="true">
+        android:orientation="vertical"
+        tools:context=".ui.RegisterStep3Activity">
 
-        <LinearLayout xmlns:tools="http://schemas.android.com/tools"
+        <RelativeLayout
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            tools:context=".ui.Register_Step3_Activity">
-
-            <RelativeLayout
-                android:id="@+id/toolbar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"
-                android:layout_marginTop="30dp"
-                android:layout_marginEnd="30dp"
-                android:layout_marginBottom="30dp"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:layout_centerVertical="true"
-                    android:onClick="@{handlers::back}"
-                    android:src="@drawable/back" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:text="@{registerStep3.step}"
-                    android:textColor="@color/orange"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
-            </RelativeLayout>
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="30dp">
 
             <ImageView
-                android:id="@+id/imgRegister"
-                android:layout_width="180dp"
-                android:layout_height="180dp"
-                android:layout_gravity="center_horizontal"
-                android:src="@drawable/register_step3" />
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_centerVertical="true"
+                android:onClick="@{onClickListener::onBackClickListener}"
+                android:src="@drawable/back" />
 
             <TextView
-                android:id="@+id/tvTitle"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
-                android:text="@{registerStep3.title}"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textSize="24sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/tvDescreption"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="16dp"
-                android:paddingStart="40dp"
-                android:paddingEnd="40dp"
-                android:text="@{registerStep3.descreption}"
-                android:textAlignment="center"
-                android:textColor="@color/colorTextGray"
-                android:textSize="16sp" />
-
-            <ImageView
-                android:id="@+id/imgVantay"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_gravity="center_horizontal"
-                android:src="@drawable/vantay" />
-
-            <TextView
-                android:layout_marginBottom="16dp"
-                android:id="@+id/tvSkip"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
-                android:text="@{registerStep3.skip}"
-                android:textAlignment="center"
+                android:layout_centerInParent="true"
+                android:text="@{registerStep3.step}"
                 android:textColor="@color/orange"
+                android:textSize="20sp"
                 android:textStyle="bold" />
+        </RelativeLayout>
+
+        <ScrollView
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
 
             <LinearLayout
-                android:paddingEnd="30dp"
-                android:paddingStart="30dp"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_marginBottom="16dp"
-                android:layout_weight="1"
-                android:gravity="bottom">
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-                <Button
-                    android:id="@+id/btnContinue"
-                    style="?android:attr/borderlessButtonStyle"
+                <ImageView
+
+                    android:layout_width="180dp"
+                    android:layout_height="180dp"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/register_step3" />
+
+                <TextView
+
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/button_orange"
-                    android:onClick="@{handlers::continue_}"
-                    android:text="@{registerStep3.continue_}"
-                    android:textAllCaps="false"
-                    android:textColor="@color/white"
-                    android:textSize="18sp" />
+                    android:layout_marginTop="50dp"
+                    android:text="@{registerStep3.title}"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <TextView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="16dp"
+                    android:paddingStart="40dp"
+                    android:paddingEnd="40dp"
+                    android:text="@{registerStep3.description}"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorTextGray"
+                    android:textSize="16sp" />
+
+                <ImageView
+
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/vantay" />
+
+                <TextView
+                    android:layout_width="match_parent"
+
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="16dp"
+                    android:text="@{registerStep3.skip}"
+                    android:textAlignment="center"
+                    android:textColor="@color/orange"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginBottom="16dp"
+                    android:layout_weight="1"
+                    android:gravity="bottom"
+                    android:paddingStart="30dp"
+                    android:paddingEnd="30dp">
+
+                    <Button
+
+                        style="?android:attr/borderlessButtonStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/button_orange"
+                        android:onClick="@{onClickListener::onContinueClickListener}"
+                        android:text="@{registerStep3.continue_}"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        android:textSize="18sp" />
+                </LinearLayout>
             </LinearLayout>
-        </LinearLayout>
-    </ScrollView>
+        </ScrollView>
+    </LinearLayout>
 </layout>

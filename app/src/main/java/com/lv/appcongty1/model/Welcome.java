@@ -1,13 +1,13 @@
 package com.lv.appcongty1.model;
 
 public class Welcome {
-    private String title,descreption,creat,login;
+    private String title,description,creatAcount,logIn;
 
-    public Welcome(String title, String descreption, String creat, String login) {
+    public Welcome(String title, String description, String creatAcount, String logIn) {
         this.title = title;
-        this.descreption = descreption;
-        this.creat = creat;
-        this.login = login;
+        this.description = description;
+        this.creatAcount = creatAcount;
+        this.logIn = logIn;
     }
 
     public String getTitle() {
@@ -18,27 +18,27 @@ public class Welcome {
         this.title = title;
     }
 
-    public String getDescreption() {
-        return descreption;
+    public String getDescription() {
+        return description;
     }
 
-    public void setDescreption(String descreption) {
-        this.descreption = descreption;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    public String getCreat() {
-        return creat;
+    public String getCreatAcount() {
+        return creatAcount;
     }
 
-    public void setCreat(String creat) {
-        this.creat = creat;
+    public void setCreatAcount(String creatAcount) {
+        this.creatAcount = creatAcount;
     }
 
-    public String getLogin() {
-        return login;
+    public String getLogIn() {
+        return logIn;
     }
 
-    public void setLogin(String login) {
-        this.login = login;
+    public void setLogIn(String logIn) {
+        this.logIn = logIn;
     }
 }
